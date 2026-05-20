@@ -20,11 +20,14 @@
   font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
 }
 
+/* --- CROSS-BROWSER VIEWPORT FIX --- */
 html, body{
   width:100%;
-  height:100%;
-  overflow:hidden; /* nincs scroll */
-  touch-action:none; /* iOS fehér sáv tiltás */
+  height:100dvh;          /* Chrome, Edge, Firefox */
+  height:100vh;           /* Safari fallback */
+  min-height:100dvh;
+  overflow:hidden;
+  touch-action:none;
   background:#120710;
   overscroll-behavior:none;
 }
@@ -52,7 +55,9 @@ html, body{
 /* APP */
 .app{
   width:100%;
-  height:100%;
+  height:100dvh;     /* Chrome fix */
+  height:100vh;      /* Safari fallback */
+  min-height:100dvh;
   background:linear-gradient(145deg, #24101e, #1a0b16);
   border-radius:0;
   border:1px solid rgba(255, 159, 208, 0.35);
@@ -91,7 +96,7 @@ html, body{
 .chat-container{
   flex:1;
   padding:16px 20px;
-  overflow:hidden; /* nincs scroll */
+  overflow:hidden;
   display:flex;
   flex-direction:column;
   justify-content:flex-start; /* üzenetek felül */
@@ -130,7 +135,7 @@ html, body{
 
 .user-avatar{
   background:var(--user-bubble);
-  color:#2a0617; /* avatar szöveg */
+  color:#2a0617; /* csak avatar szöveg */
 }
 
 .bubble{
@@ -150,7 +155,7 @@ html, body{
 
 .message.user .bubble{
   background:var(--user-bubble);
-  color:var(--text); /* <<< világos szöveg */
+  color:var(--text); /* világos szöveg */
   border-bottom-right-radius:4px;
 }
 
@@ -191,8 +196,8 @@ html, body{
   background:transparent;
   border:none;
   outline:none;
-  color:var(--text) !important; /* <<< fix */
-  font-size:16px; /* iOS ne zoomoljon */
+  color:var(--text) !important; /* Chrome fix */
+  font-size:16px;
   -webkit-appearance:none;
 }
 
