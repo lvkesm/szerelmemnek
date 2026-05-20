@@ -94,7 +94,7 @@ html, body{
   overflow:hidden; /* <<< nincs scroll */
   display:flex;
   flex-direction:column;
-  justify-content:flex-end;
+  justify-content:flex-start;
   gap:12px;
 }
 
@@ -149,7 +149,7 @@ html, body{
 
 .message.user .bubble{
   background:var(--user-bubble);
-  color:#3a1024;
+  color:var(--text;
   border-bottom-right-radius:4px;
 }
 
