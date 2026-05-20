@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>💗Szerelmemnek💗</title>
+     <link rel="stylesheet" href="qr.css">
+</head>
+<body>
+     <div class="hearts"></div>
+     <img src="qrrrr.png" alt="olvasd be!">
+
+     <audio autoplay loop>
+          <source src="/zene.mp3" type="audio/mpeg">
+     </audio>
+
+     <script>
+          document.addEventListener("click", () => {
+    const elem = document.documentElement;
+
+    if (elem.requestFullscreen) {
+        elem.requestFullscreen();
+    } else if (elem.webkitRequestFullscreen) {
+        elem.webkitRequestFullscreen();
+    } else if (elem.msRequestFullscreen) {
+        elem.msRequestFullscreen();
+    }
+}, { once: true });
+
+     </script>
+</body>
+</html>
