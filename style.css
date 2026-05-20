@@ -149,7 +149,7 @@ html, body{
 
 .message.user .bubble{
   background:var(--user-bubble);
-  color:var(--text;
+  color:var(--text);
   border-bottom-right-radius:4px;
 }
 
