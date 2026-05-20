@@ -23,8 +23,8 @@
 html, body{
   width:100%;
   height:100%;
-  overflow:hidden; /* <<< nincs scroll */
-  touch-action:none; /* <<< iOS fehér sáv tiltás */
+  overflow:hidden; /* nincs scroll */
+  touch-action:none; /* iOS fehér sáv tiltás */
   background:#120710;
   overscroll-behavior:none;
 }
@@ -91,10 +91,10 @@ html, body{
 .chat-container{
   flex:1;
   padding:16px 20px;
-  overflow:hidden; /* <<< nincs scroll */
+  overflow:hidden; /* nincs scroll */
   display:flex;
   flex-direction:column;
-  justify-content:flex-start;
+  justify-content:flex-start; /* üzenetek felül */
   gap:12px;
 }
 
@@ -130,7 +130,7 @@ html, body{
 
 .user-avatar{
   background:var(--user-bubble);
-  color:#3a1024;
+  color:#2a0617; /* avatar szöveg */
 }
 
 .bubble{
@@ -143,13 +143,14 @@ html, body{
 
 .message.bot .bubble{
   background:var(--bot-bubble);
+  color:var(--text);
   border-bottom-left-radius:4px;
   border:1px solid rgba(255,159,208,.3);
 }
 
 .message.user .bubble{
   background:var(--user-bubble);
-  color:var(--text);
+  color:var(--text); /* <<< világos szöveg */
   border-bottom-right-radius:4px;
 }
 
@@ -190,9 +191,14 @@ html, body{
   background:transparent;
   border:none;
   outline:none;
-  color:var(--text);
-  font-size:16px; /* <<< iOS ne zoomoljon */
+  color:var(--text) !important; /* <<< fix */
+  font-size:16px; /* iOS ne zoomoljon */
   -webkit-appearance:none;
+}
+
+.input-wrapper input::placeholder{
+  color:var(--text-soft);
+  opacity:.7;
 }
 
 .input-wrapper button{
